@@ -1,5 +1,3 @@
-package ru.practicum.dinner;
-
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -18,10 +16,11 @@ public class Main {
 
             switch (command) {
                 case "1":
-                    System.out.println("Введите тип блюда:");
+                    System.out.print("Введите тип блюда (Напиток, Гарнир, Мясо):");
                     String dishType = scanner.nextLine();
-                    System.out.println("Введите название блюда:");
+                    System.out.print("Введите название блюда(Должно соответствовать типу: " + dishType + "):");
                     String dishName = scanner.nextLine();
+
                     dc.addNewDish(dishType, dishName);
                     break;
                 case "2":
@@ -36,6 +35,7 @@ public class Main {
                     dc.generateDishCombo(numberOfCombos, nextItem);
                     break;
                 case "3":
+                    System.out.println("Завершение работы.");
                     return;
             }
         }
@@ -49,5 +49,4 @@ public class Main {
     }
 
 
-    }
 }

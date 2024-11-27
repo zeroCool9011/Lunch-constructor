@@ -1,17 +1,30 @@
-package ru.practicum.dinner;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DinnerConstructor {
-    private static void addNewDish(String dishType, String dishName) {
+    HashMap<String, ArrayList<String>> menu;
+        DinnerConstructor(){
+        menu = new HashMap<>();
 
-
-
-
-        // добавьте новое блюдо
     }
+    void addNewDish(String dishType, String dishName) {
 
-    private static void generateDishCombo(Intefer numberOfCombos, String nextItem) {
+        if(menu.containsKey(dishType)){
+            ArrayList<String> dish = menu.get(dishType);
+            dish.add(dishName);
 
+            }else {
+            ArrayList<String> dish = new ArrayList<>();
+            dish.add(dishName);
+            menu.put(dishType,dish);
 
+        }
+
+        }
+
+    void generateDishCombo(Integer numberOfCombos, String nextItem) {
+
+        System.out.println(menu);
         //реализуйте ввод типов блюд
         while (!nextItem.isEmpty()) {
 
@@ -20,5 +33,5 @@ public class DinnerConstructor {
         // сгенерируйте комбинации блюд и выведите на экран
 
 
-
+    }
 }
