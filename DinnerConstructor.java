@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class DinnerConstructor {
+    GenerationRandomDinner rd = new GenerationRandomDinner();
     HashMap<String, ArrayList<String>> menu;
+    ArrayList<String>dish;
         DinnerConstructor(){
         menu = new HashMap<>();
+        dish = new ArrayList<>();
 
     }
     void addNewDish(String dishType, String dishName) {
@@ -19,19 +23,18 @@ public class DinnerConstructor {
             menu.put(dishType,dish);
 
         }
+    }
+    int randomDiner(int size){
+        Random random= new Random();
+        int randomNumber = random.nextInt(size);
+    return randomNumber;
+    }
 
-        }
-
-    void generateDishCombo(Integer numberOfCombos, String nextItem) {
-
-        System.out.println(menu);
-        //реализуйте ввод типов блюд
-        while (!nextItem.isEmpty()) {
-
-        }
-
-        // сгенерируйте комбинации блюд и выведите на экран
-
+    void GeneretDinner(){
+          menu.keySet();
 
     }
+
+
+
 }
